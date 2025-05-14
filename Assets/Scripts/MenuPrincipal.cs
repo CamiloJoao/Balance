@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class MenuPrincipal : MonoBehaviour
 {
 
     [SerializeField] private string _nextSceneName = "GameplayScene";
