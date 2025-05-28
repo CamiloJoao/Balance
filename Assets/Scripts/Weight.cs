@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Weight : MonoBehaviour
 {
-    [SerializeField] private float timeToBeRemovable = 5f;
-    [SerializeField] private Color removableColor = Color.green;
+    [SerializeField] private float timeToBeRemovable = 10f;
+    [SerializeField] private Color removableColor = new Color(0f, 1f, 0.5f);
 
     private bool isRemovable = false;
     private float timer = 0f;

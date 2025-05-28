@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameManeger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [Header("HUD")]
     [SerializeField] private TMP_Text _timeHUD;
@@ -11,14 +11,14 @@ public class GameManeger : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] private float _startTime = 0f;
-    [SerializeField] private string _nextSceneName = "EndingScene";
+    
 
     private bool _isGameOver;
     private float _currentTime;
     private float _score;
     private float _recordTime;
     private float _recordScore;
-    private float _scorePerSecond = 50f;
+    private float _scorePerSecond = 5f;
 
     private void Start()
     {
@@ -43,11 +43,11 @@ public class GameManeger : MonoBehaviour
     {
         _isGameOver = true;
 
-        //  salvar dados para usar na próxima cena
+        //salvar dados para usar na próxima cena
         PlayerPrefs.SetFloat("FinalTime", _currentTime);
         PlayerPrefs.SetInt("FinalScore", (int)_score);
 
-        // verifica se há um recorde salvo e se o novo tempo é melhor (menor tempo)
+        //verifica se há um recorde salvo e se o novo tempo é melhor (menor tempo)
         if (!PlayerPrefs.HasKey("RecordTime") || _currentTime > PlayerPrefs.GetFloat("RecordTime"))
             PlayerPrefs.SetFloat("RecordTime", _currentTime);
 

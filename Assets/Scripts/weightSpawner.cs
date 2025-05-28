@@ -7,8 +7,8 @@ public class WeightSpawner : MonoBehaviour
     [SerializeField] private Transform spawnPoint1;
     [SerializeField] private Transform spawnPoint2;
 
-    [SerializeField] private float initialSpawnInterval = 3f;
-    [SerializeField] private float spawnAccelerationRate = 0.9f;
+    [SerializeField] private float initialSpawnInterval = 4f;
+    [SerializeField] private float spawnAccelerationRate = 0.95f;
 
     private float spawnTimer;
     private float currentSpawnInterval;
@@ -16,8 +16,7 @@ public class WeightSpawner : MonoBehaviour
 
     private List<GameObject> activeWeights = new List<GameObject>();
 
-    private float deleteCooldown = 5f;   // tempo entre cada remoção
-    private float deleteTimer = 0f;      // contador
+ 
 
     private int spawnIndex = 0; 
 
@@ -31,7 +30,7 @@ public class WeightSpawner : MonoBehaviour
     {
         spawnTimer -= Time.deltaTime;
         elapsedTime += Time.deltaTime;
-        deleteTimer += Time.deltaTime;
+       
 
         if (spawnTimer <= 0f)
         {
@@ -45,10 +44,9 @@ public class WeightSpawner : MonoBehaviour
             elapsedTime = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && deleteTimer >= deleteCooldown)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             RemoveOneRemovableWeight();
-            deleteTimer = 0f;
         }
     }
 
@@ -66,7 +64,7 @@ public class WeightSpawner : MonoBehaviour
 
         for (int i = 0; i < activeWeights.Count; i++)
         {
-            if (removedCount >= 2) break; // Remove no máximo 2 pesos
+            if (removedCount >= 2) break; //remove no máximo 2 pesos
 
             GameObject weight = activeWeights[i];
             if (weight == null) continue;
@@ -76,14 +74,13 @@ public class WeightSpawner : MonoBehaviour
             {
                 Destroy(weight);
                 activeWeights.RemoveAt(i);
-                i--; // Corrige o índice após remover
+                i--; // corrige o índice após remover
                 removedCount++;
             }
         }
     }
 
-    public void ResetDeleteTimer()
-    {
-        deleteTimer = deleteCooldown; // para liberar exclusão imediata, ou 0 para começar a contar do zero
-    }
+ 
+   
+
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 public class CountdownManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text countdownText;
-    [SerializeField] private GameManeger gameManager;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private Player player;
-    [SerializeField] private WeightSpawner weight;// Referência ao seu GameManager
+    [SerializeField] private WeightSpawner weight;//referencia ao GameManager
 
-    [SerializeField] private float countdownTime = 3f; // Tempo da contagem
+    [SerializeField] private float countdownTime = 3f; //tempo da contagem
     private float timer;
     private bool countdownFinished = false;
 
@@ -18,7 +18,7 @@ public class CountdownManager : MonoBehaviour
         countdownText.gameObject.SetActive(true);
         gameManager.enabled = false;
         player.enabled = false;
-        weight.enabled = false;// Desativa o controle do jogo
+        weight.enabled = false;//desativa o controle do jogo
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class CountdownManager : MonoBehaviour
 
         if (timer > 0f)
         {
-            countdownText.text = Mathf.Ceil(timer).ToString(); // Mostra 3, 2, 1
+            countdownText.text = Mathf.Ceil(timer).ToString(); //mostra 3, 2, 1
         }
         else if (timer == 0f)
         {
@@ -38,10 +38,9 @@ public class CountdownManager : MonoBehaviour
         else
         {
             countdownText.gameObject.SetActive(false);
-            gameManager.enabled = true; // Ativa o jogo
+            gameManager.enabled = true; //ativa o jogo
             player.enabled = true;
             weight.enabled = true;
-            weight.ResetDeleteTimer();
             countdownFinished = true;
         }
     }

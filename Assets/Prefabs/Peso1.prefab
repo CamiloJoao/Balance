@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4558628904150586919}
   - component: {fileID: 8741038900803911418}
   - component: {fileID: 6426597422943940898}
-  - component: {fileID: 8575791519180163719}
   - component: {fileID: -1436828384543841931}
+  - component: {fileID: 751153212385419141}
   m_Layer: 0
   m_Name: Peso1
   m_TagString: Untagged
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: ee0c0d0b30b8a014e84994f0f001b855, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -164,7 +164,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8575791519180163719
+--- !u!114 &-1436828384543841931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723300860506208992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c4ae142e4362447b38896690f001c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToBeRemovable: 10
+  removableColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &751153212385419141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,17 +192,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundTag: Ground
   gm: {fileID: 0}
---- !u!114 &-1436828384543841931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723300860506208992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c4ae142e4362447b38896690f001c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToBeRemovable: 8
-  removableColor: {r: 0, g: 1, b: 0, a: 1}

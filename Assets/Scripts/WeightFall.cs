@@ -3,10 +3,11 @@ using UnityEngine;
 public class WeightFall : MonoBehaviour
 {
     [SerializeField] private string groundTag = "Ground";
-    [SerializeField] private GameManeger gm;
+    [SerializeField] private GameManager gm;
     private void Start()
     {
-        gm = FindObjectOfType<GameManeger>();
+        gm = FindObjectOfType<GameManager>();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
