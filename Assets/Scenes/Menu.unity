@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_text: " Objetivo:\r\n- Mantenha o equil\xEDbrio da gangorra e evite que os pesos
     caiam!\r\n- Remova os pesos verdes no momento certo para manter o controle.\r\n\r\nControles:\r\n-
     SETAS: Esquerda/Direita: Inclinam a gangorra para equilibrar o peso.\r\n- ESPA\xC7O:
-    Remove at\xE9 2 pesos verdes (quando estiverem prontos)."
+    Remove o peso (quando estiver da cor verde)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
